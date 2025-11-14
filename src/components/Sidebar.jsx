@@ -72,36 +72,14 @@ function Sidebar({ isCollapsed, onToggleCollapse }) {
 
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
         <div className="flex flex-col gap-4">
-          <div className="sidebar-header">
-            <button
-              className="mobile-close-button"
-              onClick={closeMobileMenu}
-              aria-label="Close menu"
-            >
-              <span className="material-symbols-outlined">close</span>
-            </button>
-            
-            <div
-              className={`logo ${isCollapsed ? 'collapsed-logo' : ''}`}
-              style={{
-                backgroundImage:
-                  'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGXr8M6WldjJYPbcHhmz7czHizHHWwbaG4TPmOtGP63GAZX-kbVAHh8Ogwv8MCJHTfVgx1xPIOGpYPiBRLz9w6J3wDH3IflE8zV4MgQLEQtdlNunzC5MovJbxF2egU1Ikz_xmlVkPpD-FWiGPGru9f2nO_jTes1DixpQUd6Q-EAVN7JeKgpqMOGZHAlO6H0oPpFXTqEF-uvn8samAafYcufZVW5Xz2V92c8eO_VdmqG94r4Esch0h2VL_FcHgT9k8sy53C6Mbp83KB")',
-              }}
-            ></div>
-            
-            {!isCollapsed && (
-              <div className="logo-text">
-                <h1>Medical SOS</h1>
-                <p>Admin Panel</p>
-              </div>
-            )}
-            
-            {isCollapsed && (
-              <div className="collapsed-logo-text" title="Medical SOS">
-                <h1>MS</h1>
-              </div>
-            )}
-          </div>
+          {/* Mobile Close Button */}
+          <button
+            className="mobile-close-button"
+            onClick={closeMobileMenu}
+            aria-label="Close menu"
+          >
+            <span className="material-symbols-outlined">close</span>
+          </button>
           
           {/* Collapse Toggle Button */}
           <button

@@ -28,78 +28,6 @@
   box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
 }
 
-.sidebar-header {
-  display: flex;
-  gap: 0.75rem; /* gap-3 */
-  align-items: center;
-  padding: 0.75rem 1rem; /* px-4 py-3 */
-  border-radius: 0.75rem; /* rounded-xl */
-  background: linear-gradient(135deg, rgba(19, 109, 236, 0.05) 0%, rgba(59, 130, 246, 0.02) 100%);
-  border: 1px solid rgba(19, 109, 236, 0.1);
-  margin-bottom: 0.5rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.sidebar-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(19, 109, 236, 0.3) 50%, transparent 100%);
-}
-
-.dark .sidebar-header {
-  background: linear-gradient(135deg, rgba(19, 109, 236, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
-  border-color: rgba(19, 109, 236, 0.2);
-}
-
-.logo {
-  background-position: center;
-  background-repeat: no-repeat;
-  aspect-ratio: 1 / 1;
-  background-size: cover;
-  border-radius: 9999px; /* rounded-full */
-  width: 2.5rem; /* size-10 */
-  height: 2.5rem; /* size-10 */
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Ensure consistent styling across all pages */
-.logo-text h1,
-.sidebar .logo-text h1,
-.app-layout .logo-text h1,
-* .logo-text h1 {
-  color: var(--gray-900) !important;
-  font-size: 16px !important; /* 16px bold for Medical SOS */
-  font-weight: 700 !important; /* font-bold */
-  line-height: 1.5rem !important; /* leading-normal */
-  margin: 0 !important;
-}
-
-.dark .sidebar .logo-text h1,
-.dark .app-layout .logo-text h1,
-.dark * .logo-text h1 {
-  color: var(--text-dark) !important;
-}
-
-.logo-text p {
-  color: var(--text-muted-light);
-  font-size: 1rem; /* text-base */
-  font-weight: 400; /* font-normal */
-  line-height: 1.5rem; /* leading-normal */
-  margin: 0;
-}
-.dark .logo-text p {
-  color: var(--text-muted-dark);
-}
-
 .sidebar nav {
   display: flex;
   flex-direction: column;
@@ -272,26 +200,6 @@
    ==========================================
 */
 
-/* Collapsed Logo Styles */
-.collapsed-logo {
-  width: 2.5rem !important;
-  height: 2.5rem !important;
-  margin: 0 auto;
-}
-
-.collapsed-logo-text {
-  text-align: center;
-  margin-top: 0.5rem;
-}
-
-.collapsed-logo-text h1 {
-  color: var(--primary) !important;
-  font-size: 1.25rem !important;
-  font-weight: 700 !important;
-  margin: 0 !important;
-  line-height: 1.25rem !important;
-}
-
 /* Collapse Toggle Button */
 .collapse-toggle {
   position: absolute;
@@ -366,18 +274,6 @@
   display: none;
 }
 
-/* Sidebar Header in Collapsed State */
-.sidebar.collapsed .sidebar-header {
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0.5rem;
-  gap: 0.5rem;
-}
-
-.sidebar.collapsed .logo-text {
-  display: none;
-}
-
 .sidebar.collapsed .mobile-close-button {
   display: none;
 }
@@ -405,9 +301,7 @@
 
 /* Smooth transitions for all collapsed elements */
 .sidebar.collapsed .nav-item,
-.sidebar.collapsed .logout-button,
-.sidebar.collapsed .logo,
-.sidebar.collapsed .sidebar-header {
+.sidebar.collapsed .logout-button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -496,23 +390,8 @@
     left: 0;
   }
   
-  .sidebar-header {
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
   .mobile-close-button {
     display: block;
-  }
-  
-  /* Adjust logo and text for mobile */
-  .logo-text h1 {
-    font-size: 14px !important;
-    line-height: 1.25rem !important;
-  }
-  
-  .logo-text p {
-    font-size: 12px;
   }
   
   /* Mobile navigation adjustments */
@@ -547,14 +426,6 @@
   
   .sidebar {
     width: 280px; /* Slightly narrower on very small screens */
-  }
-  
-  .logo-text h1 {
-    font-size: 13px !important;
-  }
-  
-  .logo-text p {
-    font-size: 11px;
   }
   
   .nav-item {
@@ -596,10 +467,6 @@
 @media (max-height: 500px) and (orientation: landscape) {
   .sidebar {
     overflow-y: auto;
-  }
-  
-  .sidebar-header {
-    padding: 0.5rem 1rem;
   }
   
   .sidebar nav {
