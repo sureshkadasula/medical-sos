@@ -194,43 +194,111 @@ a {
 }
 
 /* ==========================================
-   Responsive Design System
+   Enhanced Responsive Design System
    ==========================================
 */
 
-/* Mobile First Breakpoints */
+/* Comprehensive Mobile & Tablet Breakpoints */
+
+/* Extra Small Mobile (320px - 479px) */
 @media (max-width: 479px) {
-  /* Extra Small Mobile */
   body {
     font-size: 14px;
   }
+  
+  /* Enhanced mobile spacing */
+  .app-layout {
+    padding: 0.5rem;
+  }
+  
+  /* Mobile header adjustments */
+  .header {
+    height: 3.5rem;
+    padding: 0 1rem;
+  }
+  
+  .page-title {
+    font-size: 1rem !important;
+  }
 }
 
+/* Small Mobile (480px - 767px) */
 @media (min-width: 480px) and (max-width: 767px) {
-  /* Small Mobile */
   body {
     font-size: 15px;
   }
+  
+  .app-layout {
+    padding: 0.75rem;
+  }
+  
+  .header {
+    height: 3.75rem;
+    padding: 0 1.25rem;
+  }
+  
+  .page-title {
+    font-size: 1.125rem !important;
+  }
 }
 
+/* Tablet Portrait (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Tablet Portrait */
   body {
     font-size: 16px;
   }
+  
+  .app-layout {
+    padding: 1rem;
+  }
+  
+  /* Enhanced tablet header */
+  .header {
+    height: 4rem;
+    padding: 0 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.25rem !important;
+  }
 }
 
+/* Tablet Landscape (1024px - 1279px) */
 @media (min-width: 1024px) and (max-width: 1279px) {
-  /* Tablet Landscape / Small Desktop */
+  body {
+    font-size: 16px;
+  }
+  
+  .header {
+    height: 4rem;
+    padding: 0 2rem;
+  }
+  
+  .page-title {
+    font-size: 1.375rem !important;
+  }
+}
+
+/* Desktop and larger (1280px+) */
+@media (min-width: 1280px) {
   body {
     font-size: 16px;
   }
 }
 
-@media (min-width: 1280px) {
-  /* Desktop and larger */
-  body {
-    font-size: 16px;
+/* Large Tablets & Small Laptops (1366px - 1440px) */
+@media (min-width: 1366px) and (max-width: 1440px) {
+  .app-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* Extra Large Desktop (1441px+) */
+@media (min-width: 1441px) {
+  .app-layout {
+    max-width: 1600px;
+    margin: 0 auto;
   }
 }
 
@@ -276,8 +344,54 @@ a {
   max-width: calc(100vw - 256px);
 }
 
+/* Enhanced Layout Responsiveness for All Devices */
+
 /* Desktop - adjust main content when sidebar collapses */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+  .main-content {
+    margin-left: 0; /* Remove margin-left to avoid gaps */
+    width: 100%; /* Let it take full width */
+    max-width: calc(100vw - 256px); /* Limit max width when sidebar is expanded */
+  }
+  
+  /* When sidebar is collapsed */
+  .sidebar-collapsed .main-content {
+    margin-left: 0; /* Remove margin-left for collapsed state */
+    max-width: calc(100vw - 80px); /* Increase max width when sidebar is collapsed */
+  }
+}
+
+/* Tablet Landscape (1024px - 1279px) - Enhanced tablet support */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: calc(100vw - 256px);
+  }
+  
+  .sidebar-collapsed .main-content {
+    max-width: calc(100vw - 80px);
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) - Optimized for tablet views */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100vw; /* Full width on tablets for better space utilization */
+  }
+}
+
+/* Large Mobile (576px - 767px) - Enhanced mobile experience */
+@media (min-width: 576px) and (max-width: 767px) {
+  .main-content {
+    padding: 1rem; /* Add padding for larger mobile screens */
+  }
+}
+
+/* Original Desktop rule for backward compatibility */
+@media (min-width: 768px) and (max-width: 1023px) {
   .main-content {
     margin-left: 0; /* Remove margin-left to avoid gaps */
     width: 100%; /* Let it take full width */
