@@ -90,6 +90,9 @@ function Sidebar({ isCollapsed, onToggleCollapse }) {
             <span className="material-symbols-outlined">menu</span>
           </button>
           
+          {/* Spacer between collapse toggle and navigation */}
+          <div className="sidebar-spacer"></div>
+          
           <nav>
             <NavItem to="/dashboard" icon="dashboard" label="Dashboard" onClick={closeMobileMenu} isCollapsed={isCollapsed} />
             <NavItem to="/users" icon="group" label="Users" onClick={closeMobileMenu} isCollapsed={isCollapsed} />
