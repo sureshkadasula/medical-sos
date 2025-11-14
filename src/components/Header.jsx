@@ -1,6 +1,7 @@
 import '../styles/Header.css';
 import React from "react";
 import { useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle.jsx";
 
 function Header() {
   const location = useLocation();
@@ -34,6 +35,7 @@ function Header() {
         <h1 className="page-title">{pageTitle}</h1>
       </div>
       <div className="header-right">
+        <ThemeToggle />
         <button className="header-button">
           <span className="material-symbols-outlined">notifications</span>
         </button>
