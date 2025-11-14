@@ -1,0 +1,167 @@
+/* ==========================================
+   ActivityTable Component Styles
+   ==========================================
+*/
+.activity-table-wrapper {
+  background-color: var(--card-bg-light);
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.activity-table-wrapper:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .activity-table-wrapper {
+  background-color: var(--card-bg-dark);
+  border-color: var(--border-dark);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.activity-table {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.activity-table table {
+  width: 100%;
+  font-size: 13px; /* text-sm - reduced from 14px */
+  text-align: left;
+  color: var(--text-muted-light);
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.activity-table table th {
+  font-size: 11px; /* text-xs - reduced from 12px */
+  color: var(--gray-700);
+  font-weight: 600;
+  background-color: var(--table-header-bg-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dark .activity-table table th {
+  color: var(--gray-400);
+  background-color: var(--table-header-bg-dark);
+  border-bottom-color: var(--border-dark);
+}
+
+.activity-table tbody tr {
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.activity-table tbody tr:hover {
+  background-color: var(--table-row-hover-light);
+}
+
+.activity-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.dark .activity-table tbody tr {
+  border-bottom-color: var(--border-dark);
+}
+
+.dark .activity-table tbody tr:hover {
+  background-color: var(--table-row-hover-dark);
+}
+
+.activity-table td {
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activity-table td.name {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.dark .activity-table td.name {
+  color: var(--text-dark);
+}
+
+.activity-table td.status {
+  white-space: nowrap;
+}
+
+.activity-table td.time {
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  color: var(--text-muted-light);
+}
+
+.activity-table td.actions {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.action-link {
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 12px; /* text-sm reduced to 12px */
+}
+
+.action-link:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+.activity-table .empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--text-muted-light);
+}
+
+.dark .activity-table .empty-state {
+  color: var(--text-muted-dark);
+}
+
+.activity-table .empty-state .material-symbols-outlined {
+  font-size: 3rem;
+  color: var(--gray-400);
+  margin-bottom: 1rem;
+}
+
+.dark .activity-table .empty-state .material-symbols-outlined {
+  color: var(--gray-500);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .activity-table table {
+    font-size: 12px; /* Even smaller on mobile */
+  }
+  
+  .activity-table table th {
+    font-size: 10px;
+    padding: 0.5rem 1rem; /* Reduced padding on mobile */
+  }
+  
+  .activity-table td {
+    padding: 0.75rem 1rem;
+  }
+  
+  .activity-table .empty-state {
+    padding: 2rem 1rem;
+  }
+  
+  .activity-table .empty-state .material-symbols-outlined {
+    font-size: 2rem;
+  }
+}
