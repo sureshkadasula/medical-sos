@@ -6,9 +6,6 @@ import ActivityTable from "./ActivityTable";
 function Dashboard() {
   return (
     <div className="dashboard">
-      <div className="dashboard-header">
-        <h1>Dashboard Overview</h1>
-      </div>
       <StatsGrid />
       <ActivityTable />
     </div>

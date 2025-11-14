@@ -71,29 +71,26 @@ function Sidebar({ isCollapsed, onToggleCollapse }) {
       </button>
 
       <aside className={`sidebar ${isMobileMenuOpen ? 'mobile-open' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
-        <div className="flex flex-col gap-4">
-          {/* Mobile Close Button */}
-          <button
-            className="mobile-close-button"
-            onClick={closeMobileMenu}
-            aria-label="Close menu"
-          >
-            <span className="material-symbols-outlined">close</span>
-          </button>
-          
-          {/* Collapse Toggle Button */}
-          <button
-            className="collapse-toggle"
-            onClick={toggleCollapse}
-            title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-          >
-            <span className="material-symbols-outlined">menu</span>
-          </button>
-          
-          {/* Spacer between collapse toggle and navigation */}
-          <div className="sidebar-spacer"></div>
-          
-          <nav>
+        {/* Mobile Close Button */}
+        <button
+          className="mobile-close-button"
+          onClick={closeMobileMenu}
+          aria-label="Close menu"
+        >
+          <span className="material-symbols-outlined">close</span>
+        </button>
+        
+        {/* Collapse Toggle Button */}
+        <button
+          className="collapse-toggle"
+          onClick={toggleCollapse}
+          title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
+        >
+          <span className="material-symbols-outlined">menu</span>
+        </button>
+        
+        <div className="sidebar-content">
+          <nav className="navigation-section">
             <NavItem to="/dashboard" icon="dashboard" label="Dashboard" onClick={closeMobileMenu} isCollapsed={isCollapsed} />
             <NavItem to="/users" icon="group" label="Users" onClick={closeMobileMenu} isCollapsed={isCollapsed} />
             <NavItem to="/doctors" icon="medical_services" label="Doctors" onClick={closeMobileMenu} isCollapsed={isCollapsed} />

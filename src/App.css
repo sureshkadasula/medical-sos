@@ -314,21 +314,22 @@ a {
   width: 100%;
 }
 
-/* For small screens, stack layout vertically */
+/* For small screens, use fixed sidebar approach */
 @media (max-width: 767px) {
   .app-layout {
-    flex-direction: column;
+    flex-direction: row; /* Keep row layout for sidebar compatibility */
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
   }
   
-  /* Prevent main content from showing behind mobile sidebar */
+  /* Main content takes full width on mobile, sidebar overlays */
   .main-content {
     width: 100%;
     margin-left: 0;
     position: relative;
     z-index: 1;
+    max-width: 100vw;
   }
 }
 
@@ -411,6 +412,7 @@ a {
     width: 100%;
     margin-left: 0;
     max-width: 100vw;
+    padding: 1rem;
   }
 }
 
@@ -494,7 +496,8 @@ a {
   .sos-table,
   .reports-table {
     border-radius: 0.5rem; /* rounded-lg */
-    margin: 0 -0.5rem;
+    margin: 0;
+    overflow-x: auto; /* Enable horizontal scrolling */
   }
   
   .users-table table,
@@ -502,6 +505,7 @@ a {
   .sos-table table,
   .reports-table table {
     font-size: 11px; /* text-xs */
+    min-width: 600px; /* Ensure table doesn't shrink too much */
   }
   
   .users-table table th,
@@ -510,6 +514,7 @@ a {
   .reports-table table th {
     font-size: 9px; /* text-xs -> text-2xs */
     padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    white-space: nowrap;
   }
   
   .users-table table td,
@@ -517,6 +522,7 @@ a {
   .sos-table table td,
   .reports-table table td {
     padding: 0.5rem 0.75rem; /* px-3 py-2 */
+    white-space: nowrap;
   }
 }
 
@@ -527,6 +533,7 @@ a {
   .sos-table table,
   .reports-table table {
     font-size: 10px;
+    min-width: 500px; /* Smaller minimum width for extra small screens */
   }
   
   .users-table table th,
@@ -725,13 +732,26 @@ a {
     overflow: hidden;
   }
   
+  .main-content {
+    padding: 0.5rem 1rem; /* Reduced padding in landscape */
+  }
+  
   .users-container,
   .doctors-container,
   .sos-container,
   .reports-container {
-    padding: 1rem;
+    padding: 0.5rem;
     height: calc(100vh - 4rem);
     overflow-y: auto;
+  }
+  
+  /* Smaller tables in landscape */
+  .users-table table,
+  .doctors-table table,
+  .sos-table table,
+  .reports-table table {
+    font-size: 9px;
+    min-width: 400px;
   }
 }
 

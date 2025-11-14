@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-light);
-  padding: 0 2rem; /* px-8 */
+  padding: 0 1rem; /* px-4 - reduced for web app */
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
   backdrop-filter: blur(12px);
   position: sticky;
@@ -181,12 +181,15 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .header {
-    padding: 0 1rem; /* px-4 */
+    padding: 0 1rem 0 2.5rem; /* px-4 py-0 pl-10 - further reduced left padding */
     height: 3.5rem; /* h-14 */
   }
   
   .page-title {
     font-size: 1.125rem; /* text-lg */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .header-right {
@@ -204,7 +207,8 @@
 
 @media (max-width: 480px) {
   .header {
-    padding: 0 0.75rem; /* px-3 */
+    padding: 0 0.75rem 0 2.25rem; /* px-3 pl-9 - further reduced left padding */
+    height: 3.25rem; /* h-13 */
   }
   
   .page-title {
@@ -213,5 +217,13 @@
   
   .header-right {
     gap: 0.5rem; /* gap-2 */
+  }
+  
+  .header-button {
+    padding: 0.25rem; /* p-1 */
+  }
+  
+  .theme-toggle {
+    padding: 0.25rem; /* p-1 */
   }
 }
